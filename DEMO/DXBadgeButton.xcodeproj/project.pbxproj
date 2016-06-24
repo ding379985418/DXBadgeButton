@@ -1,0 +1,336 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4BA1B1A1D19017F00F5CDAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BA1B191D19017F00F5CDAC /* main.m */; };
+		F4BA1B1D1D19017F00F5CDAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BA1B1C1D19017F00F5CDAC /* AppDelegate.m */; };
+		F4BA1B201D19017F00F5CDAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4BA1B1F1D19017F00F5CDAC /* ViewController.m */; };
+		F4BA1B231D19017F00F5CDAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BA1B211D19017F00F5CDAC /* Main.storyboard */; };
+		F4BA1B251D19017F00F5CDAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4BA1B241D19017F00F5CDAC /* Assets.xcassets */; };
+		F4BA1B281D19017F00F5CDAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4BA1B261D19017F00F5CDAC /* LaunchScreen.storyboard */; };
+		F4CB7D3A1D1B64740004ECD3 /* DXTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F4CB7D391D1B64740004ECD3 /* DXTest.m */; };
+		F4E250B71D1A48B700538CFC /* DXBadgeButton.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F4E250B41D1A48B700538CFC /* DXBadgeButton.bundle */; };
+		F4E250B81D1A48B700538CFC /* DXBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E250B61D1A48B700538CFC /* DXBadgeButton.m */; };
+		F4E250BB1D1A5DAC00538CFC /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E250BA1D1A5DAC00538CFC /* TableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F4BA1B151D19017F00F5CDAC /* DXBadgeButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DXBadgeButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4BA1B191D19017F00F5CDAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F4BA1B1B1D19017F00F5CDAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F4BA1B1C1D19017F00F5CDAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F4BA1B1E1D19017F00F5CDAC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F4BA1B1F1D19017F00F5CDAC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F4BA1B221D19017F00F5CDAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4BA1B241D19017F00F5CDAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4BA1B271D19017F00F5CDAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F4BA1B291D19017F00F5CDAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4CB7D381D1B64740004ECD3 /* DXTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTest.h; sourceTree = "<group>"; };
+		F4CB7D391D1B64740004ECD3 /* DXTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTest.m; sourceTree = "<group>"; };
+		F4E250B41D1A48B700538CFC /* DXBadgeButton.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DXBadgeButton.bundle; sourceTree = "<group>"; };
+		F4E250B51D1A48B700538CFC /* DXBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXBadgeButton.h; sourceTree = "<group>"; };
+		F4E250B61D1A48B700538CFC /* DXBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXBadgeButton.m; sourceTree = "<group>"; };
+		F4E250B91D1A5DAC00538CFC /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		F4E250BA1D1A5DAC00538CFC /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4BA1B121D19017F00F5CDAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4BA1B0C1D19017F00F5CDAC = {
+			isa = PBXGroup;
+			children = (
+				F4BA1B171D19017F00F5CDAC /* DXBadgeButton */,
+				F4BA1B161D19017F00F5CDAC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4BA1B161D19017F00F5CDAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4BA1B151D19017F00F5CDAC /* DXBadgeButton.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4BA1B171D19017F00F5CDAC /* DXBadgeButton */ = {
+			isa = PBXGroup;
+			children = (
+				F4E250B31D1A48B700538CFC /* DXBadgeButton */,
+				F4BA1B1B1D19017F00F5CDAC /* AppDelegate.h */,
+				F4BA1B1C1D19017F00F5CDAC /* AppDelegate.m */,
+				F4BA1B1E1D19017F00F5CDAC /* ViewController.h */,
+				F4BA1B1F1D19017F00F5CDAC /* ViewController.m */,
+				F4E250B91D1A5DAC00538CFC /* TableViewController.h */,
+				F4E250BA1D1A5DAC00538CFC /* TableViewController.m */,
+				F4BA1B211D19017F00F5CDAC /* Main.storyboard */,
+				F4BA1B241D19017F00F5CDAC /* Assets.xcassets */,
+				F4BA1B261D19017F00F5CDAC /* LaunchScreen.storyboard */,
+				F4BA1B291D19017F00F5CDAC /* Info.plist */,
+				F4BA1B181D19017F00F5CDAC /* Supporting Files */,
+				F4CB7D381D1B64740004ECD3 /* DXTest.h */,
+				F4CB7D391D1B64740004ECD3 /* DXTest.m */,
+			);
+			path = DXBadgeButton;
+			sourceTree = "<group>";
+		};
+		F4BA1B181D19017F00F5CDAC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4BA1B191D19017F00F5CDAC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4E250B31D1A48B700538CFC /* DXBadgeButton */ = {
+			isa = PBXGroup;
+			children = (
+				F4E250B41D1A48B700538CFC /* DXBadgeButton.bundle */,
+				F4E250B51D1A48B700538CFC /* DXBadgeButton.h */,
+				F4E250B61D1A48B700538CFC /* DXBadgeButton.m */,
+			);
+			path = DXBadgeButton;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4BA1B141D19017F00F5CDAC /* DXBadgeButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4BA1B2C1D19017F00F5CDAC /* Build configuration list for PBXNativeTarget "DXBadgeButton" */;
+			buildPhases = (
+				F4BA1B111D19017F00F5CDAC /* Sources */,
+				F4BA1B121D19017F00F5CDAC /* Frameworks */,
+				F4BA1B131D19017F00F5CDAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DXBadgeButton;
+			productName = DXBadgeButton;
+			productReference = F4BA1B151D19017F00F5CDAC /* DXBadgeButton.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4BA1B0D1D19017F00F5CDAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = DINGXU;
+				TargetAttributes = {
+					F4BA1B141D19017F00F5CDAC = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = F4BA1B101D19017F00F5CDAC /* Build configuration list for PBXProject "DXBadgeButton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4BA1B0C1D19017F00F5CDAC;
+			productRefGroup = F4BA1B161D19017F00F5CDAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4BA1B141D19017F00F5CDAC /* DXBadgeButton */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4BA1B131D19017F00F5CDAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4BA1B281D19017F00F5CDAC /* LaunchScreen.storyboard in Resources */,
+				F4BA1B251D19017F00F5CDAC /* Assets.xcassets in Resources */,
+				F4BA1B231D19017F00F5CDAC /* Main.storyboard in Resources */,
+				F4E250B71D1A48B700538CFC /* DXBadgeButton.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4BA1B111D19017F00F5CDAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4BA1B201D19017F00F5CDAC /* ViewController.m in Sources */,
+				F4CB7D3A1D1B64740004ECD3 /* DXTest.m in Sources */,
+				F4BA1B1D1D19017F00F5CDAC /* AppDelegate.m in Sources */,
+				F4E250B81D1A48B700538CFC /* DXBadgeButton.m in Sources */,
+				F4E250BB1D1A5DAC00538CFC /* TableViewController.m in Sources */,
+				F4BA1B1A1D19017F00F5CDAC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F4BA1B211D19017F00F5CDAC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4BA1B221D19017F00F5CDAC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F4BA1B261D19017F00F5CDAC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4BA1B271D19017F00F5CDAC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4BA1B2A1D19017F00F5CDAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F4BA1B2B1D19017F00F5CDAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4BA1B2D1D19017F00F5CDAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DXBadgeButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DXBadgeButton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F4BA1B2E1D19017F00F5CDAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DXBadgeButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DXBadgeButton;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4BA1B101D19017F00F5CDAC /* Build configuration list for PBXProject "DXBadgeButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4BA1B2A1D19017F00F5CDAC /* Debug */,
+				F4BA1B2B1D19017F00F5CDAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4BA1B2C1D19017F00F5CDAC /* Build configuration list for PBXNativeTarget "DXBadgeButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4BA1B2D1D19017F00F5CDAC /* Debug */,
+				F4BA1B2E1D19017F00F5CDAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4BA1B0D1D19017F00F5CDAC /* Project object */;
+}
