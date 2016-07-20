@@ -7,14 +7,19 @@
 //
 
 #import "DXBadgeButton.h"
+///默认badge宽度
 #define KDefaultWidth 20
-#define KDefaultColor [UIColor redColor]
+///默认颜色
+#define KDefaultColor [UIColor colorWithRed:0.937 green:0.247 blue:0.227 alpha:1.00]
+///默认拉伸长度比率
 #define KDefaultRatio 0.2
-#define KDefaultLimite 2
-#define KdefaultDamping 5
+///默认最小半径
+#define KDefaultLimite 4
+///默认幅度
+#define KdefaultSpringRange 20
 @interface DXBadgeButton ()
 ///父视图
-@property(nonatomic, strong) UIView *containerView;
+@property(nonatomic, weak) UIView *containerView;
 ///前BadgeView视图
 @property(nonatomic, strong) UIView *frontView;
 ///后BadgeView视图
@@ -48,44 +53,55 @@
     CGFloat cornerRadi;
     UIView *_overView;
 }
-
+- (instancetype)initWithFrame:(CGRect)frame
+                 diClickBadge:(BadgeDidClickBlock)didClickBlock
+                 didDisappear:(BadgeDidDisappearBlock)didDisappearBlock{
+    self = [self initWithFrame:frame];
+    self.didClickBlock = didClickBlock;
+    self.didDisappearBlock = didDisappearBlock;
+    return self;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame{
    self = [super initWithFrame:frame];
-    self.badgeWidth = frame.size.width;
+//    self.badgeWidth = frame.size.width;
     orgialPoint = CGPointMake(frame.size.width * 0.5, frame.size.height * 0.5);
-    [self setUp];
+    [self setUpWithFrame:frame];
 
     return  self;
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
+    self.badgeLabel.center = CGPointMake(self.frontView.frame.size.width * 0.5, self.frontView.frame.size.height * 0.5);
+    self.frontView.bounds = self.bounds;
 }
 
 #pragma mark - 初始化方法
-- (void)setUp {
-    self.isShowBomAnimation = YES;
-    self.isShowSpringAnimation = YES;
+- (void)setUpWithFrame:(CGRect)frame {
+  self.isShowBomAnimation = YES;
+  self.isShowSpringAnimation = YES;
+  self.badgeFont = [UIFont systemFontOfSize:10];
   cornerRadi = 0.5;
   ratio = KDefaultRatio;
   miniRad = KDefaultLimite;
+  self.springRange = KdefaultSpringRange;
   shapeLayer = [CAShapeLayer layer];
-  CGFloat width = self.badgeWidth ? self.badgeWidth : KDefaultWidth;
+//  CGFloat width = self.badgeWidth ? self.badgeWidth : KDefaultWidth;
   self.frontView = [[UIView alloc] init];
   self.frontView.clipsToBounds = YES;
-  self.frontView.bounds = CGRectMake(0, 0, width, width);
+  self.frontView.bounds =CGRectMake(0, 0, frame.size.width,  frame.size.height);
   self.frontView.center = orgialPoint;
-  self.frontView.layer.cornerRadius = self.frontView.frame.size.width * cornerRadi;
+  self.frontView.layer.cornerRadius = self.frontView.frame.size.height * cornerRadi;
   self.frontView.backgroundColor = KDefaultColor;
   [self addSubview:self.frontView];
     
   self.backView = [UIView new];
   self.backView.hidden = YES;
   self.backView.clipsToBounds = YES;
-  self.backView.frame = CGRectMake(0, 0, width, width);
+  self.backView.frame = CGRectMake(0, 0, frame.size.width,  frame.size.height);
   self.backView.center = orgialPoint;
-  self.backView.layer.cornerRadius = self.backView.frame.size.width * 0.5;
+  self.backView.layer.cornerRadius = self.backView.frame.size.height * 0.5;
   self.backView.backgroundColor = KDefaultColor;
   [self addSubview:self.backView];
 
@@ -93,8 +109,9 @@
     self.badgeLabel.textAlignment = NSTextAlignmentCenter;
     self.badgeLabel.textColor = [UIColor whiteColor];
     self.badgeLabel.frame = self.frontView.bounds;
-    self.badgeLabel.font = [UIFont systemFontOfSize:10];
+    self.badgeLabel.font = self.badgeFont;//[UIFont systemFontOfSize:10];
     [self.frontView addSubview:self.badgeLabel];
+
     [self bringSubviewToFront:self.frontView];
     
     self.backgroundColor = [UIColor clearColor];
@@ -110,8 +127,9 @@
 - (void)handleTapGesture:(UIGestureRecognizer *)sender{
 
 //    NSLog(@"tap");
-    if (self.badgeButtonDidClick) {
-        self.badgeButtonDidClick(self);
+ 
+    if (self.didClickBlock) {
+        self.didClickBlock(self);
     }
 }
 
@@ -178,7 +196,7 @@
         sin = (x2 - x1)/distance;
         cos = (y2 - y1)/distance;
     }
-    r2 = self.frontView.frame.size.width * 0.5;
+    r2 = self.frontView.frame.size.height * 0.5;
     r1 = r2 - distance * ratio;
     pointA = CGPointMake(x1 - r1*cos, y1+r1*sin);
     pointB = CGPointMake(x1 + r1*cos , y1 - r1*sin);
@@ -186,7 +204,7 @@
     pointD = CGPointMake(x2 -r2 *cos, y2 + r2*sin);
     pointP = CGPointMake(pointB.x + distance *0.5 *sin, pointB.y + distance *0.5 *cos);
     pointO = CGPointMake(pointA.x + distance *0.5 *sin, pointA.y + distance *0.5 *cos);
-    pointG = CGPointMake(x1 + KdefaultDamping*sin, y1 + KdefaultDamping*cos);
+    pointG = CGPointMake(x1 + _springRange*sin, y1 + _springRange*cos);
     
     self.backView.bounds = CGRectMake(0, 0, r1 *2, r1 *2);
     self.backView.layer.cornerRadius = r1 ;
@@ -210,12 +228,12 @@
              [self displayBomAnimationWithPoint:touchPoint];
         }
         
-        if (self.badgeButtonDidDisappear) {
-            self.badgeButtonDidDisappear(self);
+        if (self.didDisappearBlock) {
+            self.didDisappearBlock(self);
         }
     }
     self.backView.bounds = CGRectMake(0, 0, self.frontView.frame.size.width, self.frontView.frame.size.width);
-    self.backView.layer.cornerRadius = self.frontView.frame.size.width *0.5;
+    self.backView.layer.cornerRadius = self.frontView.frame.size.height *0.5;
     [shapeLayer removeFromSuperlayer];
     self.backView.hidden = YES;
      [self convertToOrigalContainerView];
@@ -278,28 +296,17 @@
 #pragma mark -弹簧动画
 - (void)displaySpringAnimation{
    
+    CASpringAnimation *springAnimation = [CASpringAnimation animationWithKeyPath:@"position"];
+    springAnimation.duration = springAnimation.settlingDuration;
+    springAnimation.stiffness = 1000;
+    springAnimation.damping = 5;
+    springAnimation.mass = 0.5;
+    springAnimation.initialVelocity = 70;
+    springAnimation.fromValue = [NSValue valueWithCGPoint:pointG];
+    springAnimation.toValue = [NSValue valueWithCGPoint:orgialPoint];
+    springAnimation.repeatCount = 1;
+    [self.frontView.layer addAnimation:springAnimation forKey:nil];
     
-    CASpringAnimation *springAnimationX = [CASpringAnimation animationWithKeyPath:@"position.x"];
-    springAnimationX.duration = springAnimationX.settlingDuration;
-    springAnimationX.stiffness = 1000;
-    springAnimationX.damping = 5;
-    springAnimationX.mass = 0.5;
-    springAnimationX.initialVelocity = 70;
-    springAnimationX.fromValue = @(pointG.x);
-    springAnimationX.toValue = @(orgialPoint.x);
-    springAnimationX.repeatCount = 1;
-    [self.frontView.layer addAnimation:springAnimationX forKey:nil];
-    
-    CASpringAnimation *springAnimationY = [CASpringAnimation animationWithKeyPath:@"position.y"];
-    springAnimationY.duration = springAnimationY.settlingDuration;
-    springAnimationY.mass = 0.5;
-    springAnimationY.initialVelocity = 70;
-    springAnimationY.fromValue = @(pointG.y);
-    springAnimationY.toValue = @(orgialPoint.y);
-    springAnimationY.damping = 5;
-    springAnimationY.stiffness = 1000;
-    springAnimationY.repeatCount = 1;
-    [self.frontView.layer addAnimation:springAnimationY forKey:nil];
 }
 #pragma mark -shapeLayer
 - (void)drawRect{
@@ -333,25 +340,15 @@
     return _overView;
 }
 #pragma mark -setter方法
-- (void)setBadgeWidth:(CGFloat)badgeWidth {
-    _badgeWidth = badgeWidth;
-    self.bounds = CGRectMake(0, 0, badgeWidth, badgeWidth);
-    self.frontView.bounds = self.bounds;
-    self.backView.bounds = self.bounds;
-    self.frontView.layer.cornerRadius = badgeWidth * cornerRadi;
-    self.backView.layer.cornerRadius = badgeWidth * 0.5;
-    self.badgeLabel.frame = self.frontView.bounds;
-    if (badgeWidth <= 10) {
-        self.badgeFont = [UIFont systemFontOfSize:5];
-    }
-}
+
 - (void)setBadgeString:(NSString *)badgeString{
     _badgeString = badgeString;
     self.badgeLabel.text = badgeString;
     self.frontView.hidden = NO;
     self.backView.hidden = YES;
-    //    [self.badgeLabel sizeToFit];
 }
+
+
 - (void)setBadgeColor:(UIColor *)badgeColor {
     _badgeColor = badgeColor;
     self.frontView.backgroundColor = badgeColor;
